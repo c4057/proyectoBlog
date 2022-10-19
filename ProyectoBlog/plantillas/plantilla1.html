@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p style="color: green">Hola, esta es mi primera pagina web </p>
+    <p style="color: green">Mi nombre es: {{nombre}} </p>
+
+    
+    <p> 
+    {% for n in notas %} 
+
+        {% if n < 4 %}    
+            <p style="color: red"> NOTA BAJA {{n}}</p> 
+        {% else %} <p style="color: blue"> NOTA ALTA {{n}}</p>
+        {% endif %}     
+
+
+    {% endfor %}     
+    </p>    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Semillas</title>
+</head>
+<body>
+    
+    <h1> Semillas  </h1>
+    <ul>
+    {% for semillas in object_list %}
+    
+    <p>Nombre:{{semillas.nombre}}</p>
+    <li>
+        <a href="{% url 'SemillasDetalle' semillas.id %}"> Ver Semilla</a>
+        <a href="{% url 'SemillasEditar' semillas.id %}"> Editar Semilla</a>
+        <a href="{% url 'SemillasBorrar' semillas.id %}"> Eliminar Semilla</a>
+    
+    
+    </li>    
+    {% endfor %}
+
+    <br>
+
+    <a href="{% url 'SemillasCrear' %}"> Crear Semilla</a>
+
+    
+
+</body>
+</html>

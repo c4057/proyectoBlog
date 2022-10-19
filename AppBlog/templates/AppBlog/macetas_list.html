@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% extends "AppBlog/padre.html" %} 
+
+
+{% load static %} 
+
+
+
+{% block titulo %} 
+
+Lista de Macetas 
+{{mensaje}}
+
+   
+{% endblock %}
+    
+    
+    
+{% block descripcion %}    
+    <title>Macetas_List</title>
+</head>
+<body>
+    <h1> Macetas </h1>
+    <ul>
+        {% for macetas in object_list %} 
+
+            <li>
+                
+                <p>Nombre: {{macetas.nombre}}</p>
+                
+                    <a href="{% url 'MacetasDetalle' macetas.id %}"><p style="color:white;">Ver Maceta</p></a>
+                    <a href="{% url 'MacetasEditar' macetas.id %}"><p style="color:white;">Editar Maceta</p></a>
+                    <a href="{% url 'MacetasBorrar' macetas.id %}"><p style="color:white;">Eliminar Maceta</p></a>
+                   
+                </p>
+
+
+            </li>
+        {% endfor %}    
+
+    </ul>
+    <a href="{% url 'MacetasCrear' %}"><p style="color:white;">Crear Maceta</p></a>
+</body>
+</html>
+{% endblock %}

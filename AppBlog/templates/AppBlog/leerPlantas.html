@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    {% for plantas in especie %}
+    
+    <p> Nombre: {{plantas.nombre}}</p>
+
+
+    <button>
+        <a href="{% url 'PlantaEditar' plantas.nombre %}"> Editar Planta</a>
+    </button>
+
+    <button>
+        <a href="{% url 'PlantaEliminar' plantas.nombre %}"> Eliminar Planta</a>
+    </button>
+
+    
+    ###################################
+
+    {% endfor %}
+
+    <br>
+    <button>
+    <a href="{% url 'PlantasCrear' %}"> Crear Planta</a>
+    </button>
+
+
+</body>
+</html>

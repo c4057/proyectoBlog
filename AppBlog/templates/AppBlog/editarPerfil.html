@@ -1,0 +1,26 @@
+{% extends "AppBlog/padre.html" %} 
+
+
+{% load static %} 
+
+
+{% block titulo %} 
+
+Edición de usuario.
+                    
+{% endblock %}
+
+
+{% block descripcion %}
+                
+<form action="" method="POST">{% csrf_token %} 
+
+    {{formulario.as_p}}
+
+    <button type="submit">Editar</button>
+
+
+</form>
+
+
+{% endblock %}

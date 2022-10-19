@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantas_List</title>
+</head>
+<body>
+    
+    <h1> Plantas  </h1>
+    <ul>
+        {% for plantas in object_list %} 
+
+            <li>
+                <p>Nombre: {{plantas.nombre}}</p>
+                <p>
+                    <a href="{% url 'PlantasDetalle' plantas.id %}"> Ver Planta</a>
+                    <a href="{% url 'PlantasEditar' plantas.id %}"> Editar Planta</a>
+                    <a href="{% url 'PlantasBorrar' plantas.id %}"> Eliminar Planta</a>
+
+                </p>
+
+
+            </li>
+        {% endfor %}    
+
+    <br>
+
+    <a href="{% url 'PlantasCrear' %}">Crear Planta</a>
+
+</body>
+</html>
